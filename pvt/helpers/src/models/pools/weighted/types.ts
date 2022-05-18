@@ -13,6 +13,7 @@ export enum WeightedPoolType {
   ORACLE_WEIGHTED_POOL,
   LIQUIDITY_BOOTSTRAPPING_POOL,
   MANAGED_POOL,
+  SUSTAINABLE_WEIGHTED_POOL,
 }
 
 export type RawWeightedPoolDeployment = {
@@ -25,6 +26,8 @@ export type RawWeightedPoolDeployment = {
   oracleEnabled?: boolean;
   swapEnabledOnStart?: boolean;
   mustAllowlistLPs?: boolean;
+  rateProviders?: string[];
+  tokenRateCacheDurations?: BigNumberish[];
   protocolSwapFeePercentage?: BigNumberish;
   managementSwapFeePercentage?: BigNumberish;
   owner?: Account;
@@ -48,6 +51,8 @@ export type WeightedPoolDeployment = {
   mustAllowlistLPs: boolean;
   protocolSwapFeePercentage: BigNumberish;
   managementSwapFeePercentage: BigNumberish;
+  rateProviders?: string[];
+  tokenRateCacheDurations?: BigNumberish[];
   owner?: string;
   admin?: SignerWithAddress;
   from?: SignerWithAddress;

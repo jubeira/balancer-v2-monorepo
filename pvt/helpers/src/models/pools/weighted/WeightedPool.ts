@@ -694,6 +694,20 @@ export default class WeightedPool {
     return await pool.updateWeightsGradually(startTime, endTime, endWeights);
   }
 
+  async updateTokenRateCache(token: Token, from?: SignerWithAddress): Promise<ContractTransaction> {
+    const pool = from ? this.instance.connect(from) : this.instance;
+    return pool.updateTokenRateCache(token.address);
+  }
+
+  async setTokenRateCacheDuration(
+    token: Token,
+    duration: BigNumberish,
+    from?: SignerWithAddress
+  ): Promise<ContractTransaction> {
+    const pool = from ? this.instance.connect(from) : this.instance;
+    return pool.setTokenRateCacheDuration(token.address, duration);
+  }
+
   async getGradualWeightUpdateParams(from?: SignerWithAddress): Promise<GradualUpdateParams> {
     const pool = from ? this.instance.connect(from) : this.instance;
     return await pool.getGradualWeightUpdateParams();
