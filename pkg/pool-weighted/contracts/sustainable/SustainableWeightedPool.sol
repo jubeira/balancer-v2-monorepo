@@ -456,7 +456,7 @@ contract SustainableWeightedPool is BaseWeightedPool, InvariantGrowthProtocolFee
         rates = new uint256[](tokens.length);
 
         for (uint256 i = 0; i < tokens.length; ++i) {
-          rates[i] = _tokenRateCaches[tokens[i]].getRate();
+          rates[i] = _priceRate(tokens[i]);
         }
 
         return rates;
