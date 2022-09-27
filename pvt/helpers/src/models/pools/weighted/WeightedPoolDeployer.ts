@@ -17,6 +17,7 @@ import {
 } from './types';
 import { ZERO_ADDRESS } from '@balancer-labs/v2-helpers/src/constants';
 import { DAY } from '@balancer-labs/v2-helpers/src/time';
+import assert from 'assert';
 
 const NAME = 'Balancer Pool Token';
 const SYMBOL = 'BPT';
@@ -74,6 +75,7 @@ export default {
       aumProtocolFeesCollector,
       owner,
       from,
+      mockContractName,
     } = params;
 
     let result: Promise<Contract>;
@@ -117,6 +119,27 @@ export default {
             owner,
             pauseWindowDuration,
             bufferPeriodDuration,
+          ],
+          from,
+        });
+        break;
+      }
+      case WeightedPoolType.MOCK_BASE_POOL: {
+        assert(mockContractName != undefined, 'Mock contract name required to deploy mock base pool');
+        result = deploy(mockContractName, {
+          args: [
+            {
+              name: NAME,
+              symbol: SYMBOL,
+              tokens: tokens.addresses,
+              normalizedWeights: weights,
+              assetManagers: assetManagers,
+              swapFeePercentage: swapFeePercentage,
+              swapEnabledOnStart: swapEnabledOnStart,
+              mustAllowlistLPs: mustAllowlistLPs,
+              managementAumFeePercentage: managementAumFeePercentage,
+            },
+            vault.protocolFeesProvider.address,
           ],
           from,
         });
@@ -231,6 +254,9 @@ export default {
         const event = expectEvent.inReceipt(receipt, 'ManagedPoolCreated');
         result = deployedAt('v2-pool-weighted/ManagedPool', event.args.pool);
         break;
+      }
+      case WeightedPoolType.MOCK_BASE_POOL: {
+        throw new Error('Mock type not supported to deploy from factory');
       }
       default: {
         const factory = await deploy('v2-pool-weighted/WeightedPoolFactory', {
