@@ -10,6 +10,8 @@ on:
       - master
   pull_request:
     branches: '*'
+  workflow_dispatch:
+    branches: '*'
 
 jobs:
   lint:
