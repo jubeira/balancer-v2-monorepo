@@ -37,7 +37,8 @@ contract ERC4626LinearPool is LinearPool {
         uint256 swapFeePercentage,
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration,
-        address owner
+        address owner,
+        IVersionProvider versionProvider
     )
         LinearPool(
             vault,
@@ -50,7 +51,8 @@ contract ERC4626LinearPool is LinearPool {
             swapFeePercentage,
             pauseWindowDuration,
             bufferPeriodDuration,
-            owner
+            owner,
+            versionProvider
         )
     {
         // We do NOT enforce mainToken == wrappedToken.asset() even

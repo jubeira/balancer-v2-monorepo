@@ -43,7 +43,8 @@ contract MockWeightedPoolProtocolFees is WeightedPoolProtocolFees {
             pauseWindowDuration,
             bufferPeriodDuration,
             owner,
-            false
+            false,
+            IVersionProvider(address(0))
         )
         ProtocolFeeCache(
             protocolFeeProvider,

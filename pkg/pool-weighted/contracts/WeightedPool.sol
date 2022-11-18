@@ -67,6 +67,8 @@ contract WeightedPool is BaseWeightedPool, WeightedPoolProtocolFees {
         IRateProvider[] rateProviders;
         address[] assetManagers;
         uint256 swapFeePercentage;
+        address owner;
+        IVersionProvider versionProvider;
     }
 
     constructor(
@@ -74,8 +76,7 @@ contract WeightedPool is BaseWeightedPool, WeightedPoolProtocolFees {
         IVault vault,
         IProtocolFeePercentagesProvider protocolFeeProvider,
         uint256 pauseWindowDuration,
-        uint256 bufferPeriodDuration,
-        address owner
+        uint256 bufferPeriodDuration
     )
         BaseWeightedPool(
             vault,
@@ -86,8 +87,9 @@ contract WeightedPool is BaseWeightedPool, WeightedPoolProtocolFees {
             params.swapFeePercentage,
             pauseWindowDuration,
             bufferPeriodDuration,
-            owner,
-            false
+            params.owner,
+            false,
+            params.versionProvider
         )
         ProtocolFeeCache(
             protocolFeeProvider,

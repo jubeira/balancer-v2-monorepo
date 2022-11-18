@@ -109,8 +109,9 @@ abstract contract LiquidityBootstrappingPoolSettings is IMinimalSwapInfoPool, Ne
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration,
         address owner,
-        bool swapEnabledOnStart
-    ) NewBasePool(vault, poolId, name, symbol, pauseWindowDuration, bufferPeriodDuration, owner) {
+        bool swapEnabledOnStart,
+        IVersionProvider versionProvider
+    ) NewBasePool(vault, poolId, name, symbol, pauseWindowDuration, bufferPeriodDuration, owner, versionProvider) {
         uint256 totalTokens = tokens.length;
         InputHelpers.ensureInputLengthMatch(totalTokens, normalizedWeights.length);
         _require(tokens.length >= _MIN_TOKENS, Errors.MIN_TOKENS);

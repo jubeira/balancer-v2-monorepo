@@ -36,6 +36,7 @@ contract ReaperLinearPool is LinearPool {
         uint256 pauseWindowDuration;
         uint256 bufferPeriodDuration;
         address owner;
+        IVersionProvider versionProvider;
     }
 
     constructor(ConstructorArgs memory args)
@@ -50,7 +51,8 @@ contract ReaperLinearPool is LinearPool {
             args.swapFeePercentage,
             args.pauseWindowDuration,
             args.bufferPeriodDuration,
-            args.owner
+            args.owner,
+            args.versionProvider
         )
     {
         IReaperTokenVault tokenVault = IReaperTokenVault(address(args.wrappedToken));

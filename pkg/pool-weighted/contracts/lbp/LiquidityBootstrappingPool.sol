@@ -50,7 +50,8 @@ contract LiquidityBootstrappingPool is LiquidityBootstrappingPoolSettings {
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration,
         address owner,
-        bool swapEnabledOnStart
+        bool swapEnabledOnStart,
+        IVersionProvider versionProvider
     )
         LiquidityBootstrappingPoolSettings(
             vault,
@@ -67,7 +68,8 @@ contract LiquidityBootstrappingPool is LiquidityBootstrappingPoolSettings {
             pauseWindowDuration,
             bufferPeriodDuration,
             owner,
-            swapEnabledOnStart
+            swapEnabledOnStart,
+            versionProvider
         )
     {
         // solhint-disable-previous-line no-empty-blocks

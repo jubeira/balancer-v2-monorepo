@@ -39,8 +39,9 @@ contract ReaperLinearPoolFactory is ILastCreatedPoolFactory, BasePoolFactory, Re
     constructor(
         IVault vault,
         IProtocolFeePercentagesProvider protocolFeeProvider,
-        IBalancerQueries queries
-    ) BasePoolFactory(vault, protocolFeeProvider, type(ReaperLinearPool).creationCode) {
+        IBalancerQueries queries,
+        string memory version
+    ) BasePoolFactory(vault, protocolFeeProvider, type(ReaperLinearPool).creationCode, version) {
         _queries = queries;
     }
 
@@ -103,7 +104,8 @@ contract ReaperLinearPoolFactory is ILastCreatedPoolFactory, BasePoolFactory, Re
             swapFeePercentage: swapFeePercentage,
             pauseWindowDuration: pauseWindowDuration,
             bufferPeriodDuration: bufferPeriodDuration,
-            owner: owner
+            owner: owner,
+            versionProvider: this
         });
 
         ReaperLinearPool pool = ReaperLinearPool(_create(abi.encode(args)));

@@ -15,6 +15,7 @@
 pragma solidity ^0.7.0;
 pragma experimental ABIEncoderV2;
 
+import "@balancer-labs/v2-interfaces/contracts/pool-utils/IVersionProvider.sol";
 import "@balancer-labs/v2-interfaces/contracts/vault/IVault.sol";
 
 import "@balancer-labs/v2-pool-utils/contracts/factories/BasePoolFactory.sol";
@@ -23,8 +24,8 @@ import "@balancer-labs/v2-pool-utils/contracts/factories/FactoryWidePauseWindow.
 import "./ComposableStablePool.sol";
 
 contract ComposableStablePoolFactory is BasePoolFactory, FactoryWidePauseWindow {
-    constructor(IVault vault, IProtocolFeePercentagesProvider protocolFeeProvider)
-        BasePoolFactory(vault, protocolFeeProvider, type(ComposableStablePool).creationCode)
+    constructor(IVault vault, IProtocolFeePercentagesProvider protocolFeeProvider, string memory version)
+        BasePoolFactory(vault, protocolFeeProvider, type(ComposableStablePool).creationCode, version)
     {
         // solhint-disable-previous-line no-empty-blocks
     }
@@ -41,7 +42,8 @@ contract ComposableStablePoolFactory is BasePoolFactory, FactoryWidePauseWindow 
         uint256[] memory tokenRateCacheDurations,
         bool[] memory exemptFromYieldProtocolFeeFlags,
         uint256 swapFeePercentage,
-        address owner
+        address owner,
+        IVersionProvider versionProvider
     ) external returns (ComposableStablePool) {
         (uint256 pauseWindowDuration, uint256 bufferPeriodDuration) = getPauseConfiguration();
         return
@@ -61,7 +63,8 @@ contract ComposableStablePoolFactory is BasePoolFactory, FactoryWidePauseWindow 
                             swapFeePercentage: swapFeePercentage,
                             pauseWindowDuration: pauseWindowDuration,
                             bufferPeriodDuration: bufferPeriodDuration,
-                            owner: owner
+                            owner: owner,
+                            versionProvider: versionProvider
                         })
                     )
                 )

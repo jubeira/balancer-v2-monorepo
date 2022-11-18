@@ -16,6 +16,7 @@ pragma solidity ^0.7.0;
 pragma experimental ABIEncoderV2;
 
 import "@balancer-labs/v2-interfaces/contracts/pool-utils/IControlledPool.sol";
+import "@balancer-labs/v2-interfaces/contracts/pool-utils/IVersionProvider.sol";
 import "@balancer-labs/v2-interfaces/contracts/vault/IVault.sol";
 import "@balancer-labs/v2-interfaces/contracts/vault/IBasePool.sol";
 
@@ -32,6 +33,7 @@ import "./lib/PoolRegistrationLib.sol";
 import "./BalancerPoolToken.sol";
 import "./BasePoolAuthorization.sol";
 import "./RecoveryMode.sol";
+import "./Version.sol";
 
 // solhint-disable max-states-count
 
@@ -57,6 +59,7 @@ import "./RecoveryMode.sol";
 abstract contract BasePool is
     IBasePool,
     IControlledPool,
+    Version,
     BasePoolAuthorization,
     BalancerPoolToken,
     TemporarilyPausable,
@@ -111,7 +114,8 @@ abstract contract BasePool is
         uint256 swapFeePercentage,
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration,
-        address owner
+        address owner,
+        IVersionProvider versionProvider
     )
         // Base Pools are expected to be deployed using factories. By using the factory address as the action
         // disambiguator, we make all Pools deployed by the same factory share action identifiers. This allows for
@@ -122,6 +126,7 @@ abstract contract BasePool is
         BalancerPoolToken(name, symbol, vault)
         BasePoolAuthorization(owner)
         TemporarilyPausable(pauseWindowDuration, bufferPeriodDuration)
+        Version(versionProvider)
     {
         _require(tokens.length >= _MIN_TOKENS, Errors.MIN_TOKENS);
         _require(tokens.length <= _getMaxTokens(), Errors.MAX_TOKENS);

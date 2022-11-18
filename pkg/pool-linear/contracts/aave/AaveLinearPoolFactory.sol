@@ -39,8 +39,9 @@ contract AaveLinearPoolFactory is ILastCreatedPoolFactory, BasePoolFactory, Reen
     constructor(
         IVault vault,
         IProtocolFeePercentagesProvider protocolFeeProvider,
-        IBalancerQueries queries
-    ) BasePoolFactory(vault, protocolFeeProvider, type(AaveLinearPool).creationCode) {
+        IBalancerQueries queries,
+        string memory version
+    ) BasePoolFactory(vault, protocolFeeProvider, type(AaveLinearPool).creationCode, version) {
         _queries = queries;
     }
 
@@ -103,7 +104,8 @@ contract AaveLinearPoolFactory is ILastCreatedPoolFactory, BasePoolFactory, Reen
             swapFeePercentage: swapFeePercentage,
             pauseWindowDuration: pauseWindowDuration,
             bufferPeriodDuration: bufferPeriodDuration,
-            owner: owner
+            owner: owner,
+            versionProvider: this
         });
 
         AaveLinearPool pool = AaveLinearPool(_create(abi.encode(args)));

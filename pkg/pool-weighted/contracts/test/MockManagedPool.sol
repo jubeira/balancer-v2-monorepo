@@ -24,10 +24,17 @@ contract MockManagedPool is ManagedPool {
         IVault vault,
         IProtocolFeePercentagesProvider protocolFeeProvider,
         ExternalWeightedMath weightedMath,
-        address owner,
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration
-    ) ManagedPool(params, vault, protocolFeeProvider, weightedMath, owner, pauseWindowDuration, bufferPeriodDuration) {
+    )
+        ManagedPool(
+            params,
+            vault,
+            weightedMath,
+            pauseWindowDuration,
+            bufferPeriodDuration
+        )
+    {
         // solhint-disable-previous-line no-empty-blocks
     }
 

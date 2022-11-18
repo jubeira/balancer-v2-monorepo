@@ -15,6 +15,7 @@
 pragma solidity ^0.7.0;
 pragma experimental ABIEncoderV2;
 
+import "@balancer-labs/v2-interfaces/contracts/pool-utils/IVersionProvider.sol";
 import "@balancer-labs/v2-interfaces/contracts/pool-linear/IStaticAToken.sol";
 import "@balancer-labs/v2-pool-utils/contracts/lib/ExternalCallLib.sol";
 
@@ -35,6 +36,7 @@ contract AaveLinearPool is LinearPool {
         uint256 pauseWindowDuration;
         uint256 bufferPeriodDuration;
         address owner;
+        IVersionProvider versionProvider;
     }
 
     constructor(ConstructorArgs memory args)
@@ -49,7 +51,8 @@ contract AaveLinearPool is LinearPool {
             args.swapFeePercentage,
             args.pauseWindowDuration,
             args.bufferPeriodDuration,
-            args.owner
+            args.owner,
+            args.versionProvider
         )
     {
         _lendingPool = IStaticAToken(address(args.wrappedToken)).LENDING_POOL();

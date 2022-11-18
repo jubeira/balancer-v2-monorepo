@@ -61,9 +61,7 @@ contract ManagedPool is ManagedPoolSettings {
     constructor(
         NewPoolParams memory params,
         IVault vault,
-        IProtocolFeePercentagesProvider protocolFeeProvider,
         IExternalWeightedMath weightedMath,
-        address owner,
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration
     )
@@ -79,9 +77,10 @@ contract ManagedPool is ManagedPoolSettings {
             params.symbol,
             pauseWindowDuration,
             bufferPeriodDuration,
-            owner
+            params.owner,
+            params.versionProvider
         )
-        ManagedPoolSettings(params, protocolFeeProvider)
+        ManagedPoolSettings(params)
     {
         _weightedMath = weightedMath;
     }

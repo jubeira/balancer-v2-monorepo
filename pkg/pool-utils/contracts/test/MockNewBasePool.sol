@@ -47,7 +47,8 @@ contract MockNewBasePool is NewBasePool {
         address[] memory assetManagers,
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration,
-        address owner
+        address owner,
+        IVersionProvider versionProvider
     )
         NewBasePool(
             vault,
@@ -56,7 +57,8 @@ contract MockNewBasePool is NewBasePool {
             symbol,
             pauseWindowDuration,
             bufferPeriodDuration,
-            owner
+            owner,
+            versionProvider
         )
     {}
 

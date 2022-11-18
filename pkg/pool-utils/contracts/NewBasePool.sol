@@ -25,6 +25,7 @@ import "@balancer-labs/v2-solidity-utils/contracts/helpers/TemporarilyPausable.s
 import "./BalancerPoolToken.sol";
 import "./BasePoolAuthorization.sol";
 import "./RecoveryMode.sol";
+import "./Version.sol";
 
 // solhint-disable max-states-count
 
@@ -51,6 +52,7 @@ abstract contract NewBasePool is
     IBasePool,
     IGeneralPool,
     IMinimalSwapInfoPool,
+    Version,
     BasePoolAuthorization,
     BalancerPoolToken,
     TemporarilyPausable,
@@ -72,7 +74,8 @@ abstract contract NewBasePool is
         string memory symbol,
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration,
-        address owner
+        address owner,
+        IVersionProvider versionProvider
     )
         // Base Pools are expected to be deployed using factories. By using the factory address as the action
         // disambiguator, we make all Pools deployed by the same factory share action identifiers. This allows for
@@ -83,6 +86,7 @@ abstract contract NewBasePool is
         BalancerPoolToken(name, symbol, vault)
         BasePoolAuthorization(owner)
         TemporarilyPausable(pauseWindowDuration, bufferPeriodDuration)
+        Version(versionProvider)
     {
         // Set immutable state variables - these cannot be read from during construction
         _poolId = poolId;

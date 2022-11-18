@@ -15,9 +15,10 @@
 pragma solidity >=0.7.0 <0.9.0;
 pragma experimental ABIEncoderV2;
 
+import "./IVersionProvider.sol";
 import "../solidity-utils/helpers/IAuthentication.sol";
 
-interface IBasePoolFactory is IAuthentication {
+interface IBasePoolFactory is IAuthentication, IVersionProvider {
     /**
      * @dev Returns true if `pool` was created by this factory.
      */

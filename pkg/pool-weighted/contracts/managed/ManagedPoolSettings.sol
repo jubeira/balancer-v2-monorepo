@@ -92,6 +92,7 @@ abstract contract ManagedPoolSettings is NewBasePool, ProtocolFeeCache, IManaged
     mapping(address => bool) private _allowedAddresses;
 
     struct NewPoolParams {
+        IProtocolFeePercentagesProvider protocolFeeProvider;
         string name;
         string symbol;
         IERC20[] tokens;
@@ -102,11 +103,13 @@ abstract contract ManagedPoolSettings is NewBasePool, ProtocolFeeCache, IManaged
         bool mustAllowlistLPs;
         uint256 managementAumFeePercentage;
         uint256 aumFeeId;
+        address owner;
+        IVersionProvider versionProvider;
     }
 
-    constructor(NewPoolParams memory params, IProtocolFeePercentagesProvider protocolFeeProvider)
+    constructor(NewPoolParams memory params)
         ProtocolFeeCache(
-            protocolFeeProvider,
+            params.protocolFeeProvider,
             ProviderFeeIDs({ swap: ProtocolFeeType.SWAP, yield: ProtocolFeeType.YIELD, aum: params.aumFeeId })
         )
     {

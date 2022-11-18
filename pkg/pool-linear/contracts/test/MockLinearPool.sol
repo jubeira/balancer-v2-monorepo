@@ -45,7 +45,8 @@ contract MockLinearPool is LinearPool, MockLinearMath {
             swapFeePercentage,
             pauseWindowDuration,
             bufferPeriodDuration,
-            owner
+            owner,
+            IVersionProvider(address(0))
         )
     {
         // solhint-disable-previous-line no-empty-blocks

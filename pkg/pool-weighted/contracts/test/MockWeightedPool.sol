@@ -23,9 +23,16 @@ contract MockWeightedPool is WeightedPool {
         IVault vault,
         IProtocolFeePercentagesProvider protocolFeeProvider,
         uint256 pauseWindowDuration,
-        uint256 bufferPeriodDuration,
-        address owner
-    ) WeightedPool(params, vault, protocolFeeProvider, pauseWindowDuration, bufferPeriodDuration, owner) {
+        uint256 bufferPeriodDuration
+    )
+        WeightedPool(
+            params,
+            vault,
+            protocolFeeProvider,
+            pauseWindowDuration,
+            bufferPeriodDuration
+        )
+    {
         // solhint-disable-previous-line no-empty-blocks
     }
 

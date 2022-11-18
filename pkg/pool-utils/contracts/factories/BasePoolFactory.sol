@@ -40,6 +40,7 @@ abstract contract BasePoolFactory is IBasePoolFactory, BaseSplitCodeFactory, Sin
 
     mapping(address => bool) private _isPoolFromFactory;
     bool private _disabled;
+    string private _version;
 
     event PoolCreated(address indexed pool);
     event FactoryDisabled();
@@ -47,9 +48,15 @@ abstract contract BasePoolFactory is IBasePoolFactory, BaseSplitCodeFactory, Sin
     constructor(
         IVault vault,
         IProtocolFeePercentagesProvider protocolFeeProvider,
-        bytes memory creationCode
+        bytes memory creationCode,
+        string memory version
     ) BaseSplitCodeFactory(creationCode) SingletonAuthentication(vault) {
         _protocolFeeProvider = protocolFeeProvider;
+        _version = version;
+    }
+
+    function version() external view override returns (string memory) {
+        return _version;
     }
 
     function isPoolFromFactory(address pool) external view override returns (bool) {

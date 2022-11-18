@@ -41,7 +41,8 @@ contract MockBasePool is BasePool {
         uint256 swapFeePercentage,
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration,
-        address owner
+        address owner,
+        IVersionProvider versionProvider
     )
         BasePool(
             vault,
@@ -53,7 +54,8 @@ contract MockBasePool is BasePool {
             swapFeePercentage,
             pauseWindowDuration,
             bufferPeriodDuration,
-            owner
+            owner,
+            versionProvider
         )
     {
         _failBeforeSwapJoinExit = false;

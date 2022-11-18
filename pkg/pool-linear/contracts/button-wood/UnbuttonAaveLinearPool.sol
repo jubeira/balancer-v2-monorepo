@@ -50,7 +50,8 @@ contract UnbuttonAaveLinearPool is LinearPool {
         uint256 swapFeePercentage,
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration,
-        address owner
+        address owner,
+        IVersionProvider versionProvider
     )
         LinearPool(
             vault,
@@ -63,7 +64,8 @@ contract UnbuttonAaveLinearPool is LinearPool {
             swapFeePercentage,
             pauseWindowDuration,
             bufferPeriodDuration,
-            owner
+            owner,
+            versionProvider
         )
     {
         // wAMPL.underlying() == AMPL

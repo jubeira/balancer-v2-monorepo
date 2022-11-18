@@ -79,6 +79,7 @@ contract ComposableStablePool is
         uint256 pauseWindowDuration;
         uint256 bufferPeriodDuration;
         address owner;
+        IVersionProvider versionProvider;
     }
 
     constructor(NewPoolParams memory params)
@@ -92,7 +93,8 @@ contract ComposableStablePool is
             params.swapFeePercentage,
             params.pauseWindowDuration,
             params.bufferPeriodDuration,
-            params.owner
+            params.owner,
+            params.versionProvider
         )
         StablePoolAmplification(params.amplificationParameter)
         ComposableStablePoolStorage(_extractStorageParams(params))

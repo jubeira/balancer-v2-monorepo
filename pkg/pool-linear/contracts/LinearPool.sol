@@ -18,6 +18,7 @@ pragma experimental ABIEncoderV2;
 import "@balancer-labs/v2-interfaces/contracts/solidity-utils/helpers/BalancerErrors.sol";
 import "@balancer-labs/v2-interfaces/contracts/pool-utils/BasePoolUserData.sol";
 import "@balancer-labs/v2-interfaces/contracts/pool-utils/IRateProvider.sol";
+import "@balancer-labs/v2-interfaces/contracts/pool-utils/IVersionProvider.sol";
 import "@balancer-labs/v2-interfaces/contracts/pool-linear/ILinearPool.sol";
 import "@balancer-labs/v2-interfaces/contracts/vault/IGeneralPool.sol";
 
@@ -135,7 +136,8 @@ abstract contract LinearPool is ILinearPool, IGeneralPool, IRateProvider, NewBas
         uint256 swapFeePercentage,
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration,
-        address owner
+        address owner,
+        IVersionProvider versionProvider
     )
         NewBasePool(
             vault,
@@ -149,7 +151,8 @@ abstract contract LinearPool is ILinearPool, IGeneralPool, IRateProvider, NewBas
             symbol,
             pauseWindowDuration,
             bufferPeriodDuration,
-            owner
+            owner,
+            versionProvider
         )
     {
         // Set tokens

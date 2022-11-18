@@ -56,7 +56,8 @@ contract MockComposableStablePoolProtocolFees is ComposableStablePoolProtocolFee
             1e12, // BasePool._MIN_SWAP_FEE_PERCENTAGE
             0,
             0,
-            address(0)
+            address(0),
+            IVersionProvider(address(0))
         )
     {
         // solhint-disable-previous-line no-empty-blocks

@@ -23,8 +23,8 @@ import "@balancer-labs/v2-pool-utils/contracts/factories/FactoryWidePauseWindow.
 import "./UnbuttonAaveLinearPool.sol";
 
 contract UnbuttonAaveLinearPoolFactory is BasePoolFactory, FactoryWidePauseWindow {
-    constructor(IVault vault, IProtocolFeePercentagesProvider protocolFeeProvider)
-        BasePoolFactory(vault, protocolFeeProvider, type(UnbuttonAaveLinearPool).creationCode)
+    constructor(IVault vault, IProtocolFeePercentagesProvider protocolFeeProvider, string memory version)
+        BasePoolFactory(vault, protocolFeeProvider, type(UnbuttonAaveLinearPool).creationCode, version)
     {
         // solhint-disable-previous-line no-empty-blocks
     }
@@ -55,7 +55,8 @@ contract UnbuttonAaveLinearPoolFactory is BasePoolFactory, FactoryWidePauseWindo
                     swapFeePercentage,
                     pauseWindowDuration,
                     bufferPeriodDuration,
-                    owner
+                    owner,
+                    IVersionProvider(this)
                 )
             )
         );

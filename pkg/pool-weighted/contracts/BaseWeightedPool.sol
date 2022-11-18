@@ -44,7 +44,8 @@ abstract contract BaseWeightedPool is BaseMinimalSwapInfoPool {
         uint256 pauseWindowDuration,
         uint256 bufferPeriodDuration,
         address owner,
-        bool mutableTokens
+        bool mutableTokens,
+        IVersionProvider versionProvider
     )
         BasePool(
             vault,
@@ -63,7 +64,8 @@ abstract contract BaseWeightedPool is BaseMinimalSwapInfoPool {
             swapFeePercentage,
             pauseWindowDuration,
             bufferPeriodDuration,
-            owner
+            owner,
+            versionProvider
         )
     {
         // solhint-disable-previous-line no-empty-blocks

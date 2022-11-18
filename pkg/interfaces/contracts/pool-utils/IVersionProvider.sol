@@ -12,22 +12,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity ^0.7.0;
-pragma experimental ABIEncoderV2;
+pragma solidity >=0.7.0 <0.9.0;
 
-import "@balancer-labs/v2-interfaces/contracts/vault/IVault.sol";
 
-import "../factories/BasePoolFactory.sol";
-import "./MockFactoryCreatedPool.sol";
-
-contract MockPoolFactory is BasePoolFactory {
-    constructor(IVault _vault, IProtocolFeePercentagesProvider protocolFeeProvider, string memory version)
-        BasePoolFactory(_vault, protocolFeeProvider, type(MockFactoryCreatedPool).creationCode, version)
-    {
-        // solhint-disable-previous-line no-empty-blocks
-    }
-
-    function create() external returns (address) {
-        return _create("");
-    }
+interface IVersionProvider {
+    /**
+     * @dev Returns a JSON representation of the contract version containing name, version number and task ID.
+     */
+    function version() external view returns (string memory);
 }

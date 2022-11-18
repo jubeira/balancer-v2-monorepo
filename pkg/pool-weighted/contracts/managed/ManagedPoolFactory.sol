@@ -37,8 +37,8 @@ import "../ExternalWeightedMath.sol";
 contract ManagedPoolFactory is BasePoolFactory, FactoryWidePauseWindow {
     IExternalWeightedMath private immutable _weightedMath;
 
-    constructor(IVault vault, IProtocolFeePercentagesProvider protocolFeeProvider)
-        BasePoolFactory(vault, protocolFeeProvider, type(ManagedPool).creationCode)
+    constructor(IVault vault, IProtocolFeePercentagesProvider protocolFeeProvider, string memory version)
+        BasePoolFactory(vault, protocolFeeProvider, type(ManagedPool).creationCode, version)
     {
         _weightedMath = new ExternalWeightedMath();
     }
