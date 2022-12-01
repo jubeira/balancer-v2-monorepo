@@ -9,7 +9,7 @@ import TokenList from '@balancer-labs/v2-helpers/src/models/tokens/TokenList';
 import WeightedPool from '@balancer-labs/v2-helpers/src/models/pools/weighted/WeightedPool';
 import { RawWeightedPoolDeployment, WeightedPoolType } from '@balancer-labs/v2-helpers/src/models/pools/weighted/types';
 import { ZERO_ADDRESS } from '@balancer-labs/v2-helpers/src/constants';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 import { expectBalanceChange } from '@balancer-labs/v2-helpers/src/test/tokenBalance';
 import Vault from '@balancer-labs/v2-helpers/src/models/vault/Vault';
 

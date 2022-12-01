@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@balancer-labs/balancer-js": "workspace:*",
+    "@balancer-labs/v2-common": "workspace:*",
     "@balancer-labs/v2-helpers": "workspace:*",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.6",
     "@nomiclabs/hardhat-ethers": "^2.2.1",

@@ -27,7 +27,7 @@ import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-wit
 import { PoolSpecialization, SwapKind } from '@balancer-labs/balancer-js';
 import { ZERO_ADDRESS } from '@balancer-labs/v2-helpers/src/constants';
 import { ProtocolFee } from '@balancer-labs/v2-helpers/src/models/vault/types';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 import { expectBalanceChange } from '@balancer-labs/v2-helpers/src/test/tokenBalance';
 import { random } from 'lodash';
 

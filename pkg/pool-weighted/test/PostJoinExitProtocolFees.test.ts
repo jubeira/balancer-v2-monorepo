@@ -3,7 +3,7 @@ import { ethers } from 'hardhat';
 import { BigNumber, Contract } from 'ethers';
 
 import { deploy } from '@balancer-labs/v2-helpers/src/contract';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-with-address';
 import { toNormalizedWeights } from '@balancer-labs/balancer-js';
 import { arrayAdd, BigNumberish, bn, fp, arraySub, fpMul, fpDiv, FP_ONE } from '@balancer-labs/v2-helpers/src/numbers';

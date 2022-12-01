@@ -11,7 +11,7 @@ import { fp, FP_ONE } from '@balancer-labs/v2-helpers/src/numbers';
 import { bn } from '../../../pvt/helpers/src/numbers';
 import { WeightedPoolEncoder } from '@balancer-labs/balancer-js';
 import { expectEqualWithError } from '@balancer-labs/v2-helpers/src/test/relativeError';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 import WeightedPool from '@balancer-labs/v2-helpers/src/models/pools/weighted/WeightedPool';
 
 describe('ProtocolFeeSplitter', function () {

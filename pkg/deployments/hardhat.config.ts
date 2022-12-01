@@ -2,7 +2,7 @@ import '@nomiclabs/hardhat-ethers';
 import '@nomiclabs/hardhat-waffle';
 import 'hardhat-local-networks-config-plugin';
 
-import '@balancer-labs/v2-common/setupTests';
+import '@balancer-labs/v2-common/src/setupTests';
 
 import { task } from 'hardhat/config';
 import { TASK_TEST } from 'hardhat/builtin-tasks/task-names';

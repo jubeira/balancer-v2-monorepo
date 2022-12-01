@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { BigNumber, Contract } from 'ethers';
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-with-address';
 import { bn, fp } from '@balancer-labs/v2-helpers/src/numbers';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 import * as expectEvent from '@balancer-labs/v2-helpers/src/test/expectEvent';
 import Token from '@balancer-labs/v2-helpers/src/models/tokens/Token';
 import LinearPool from '@balancer-labs/v2-helpers/src/models/pools/linear/LinearPool';

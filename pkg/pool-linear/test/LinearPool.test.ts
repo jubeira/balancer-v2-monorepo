@@ -6,7 +6,7 @@ import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-wit
 import { bn, fp, FP_ONE, FP_ZERO, fromFp } from '@balancer-labs/v2-helpers/src/numbers';
 import { MAX_UINT112, MAX_UINT32 } from '@balancer-labs/v2-helpers/src/constants';
 import * as expectEvent from '@balancer-labs/v2-helpers/src/test/expectEvent';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 import { PoolSpecialization } from '@balancer-labs/balancer-js';
 import { RawLinearPoolDeployment } from '@balancer-labs/v2-helpers/src/models/pools/linear/types';
 

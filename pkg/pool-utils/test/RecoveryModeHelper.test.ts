@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { BigNumber, Contract } from 'ethers';
 import { deploy } from '@balancer-labs/v2-helpers/src/contract';
 import Vault from '@balancer-labs/v2-helpers/src/models/vault/Vault';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 import { randomAddress, ZERO_ADDRESS, ZERO_BYTES32 } from '@balancer-labs/v2-helpers/src/constants';
 import { BasePoolEncoder, PoolSpecialization } from '@balancer-labs/balancer-js';
 import TokenList from '@balancer-labs/v2-helpers/src/models/tokens/TokenList';

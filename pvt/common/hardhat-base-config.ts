@@ -1,4 +1,4 @@
-import './skipFoundryTests.ts';
+import './src/skipFoundryTests.ts';
 
 type ContractSettings = Record<
   string,

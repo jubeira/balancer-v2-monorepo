@@ -4,7 +4,7 @@ import { BigNumber, Contract } from 'ethers';
 
 import * as expectEvent from '@balancer-labs/v2-helpers/src/test/expectEvent';
 import { deploy } from '@balancer-labs/v2-helpers/src/contract';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-with-address';
 import {
   arrayAdd,

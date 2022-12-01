@@ -8,7 +8,7 @@ import Vault from '@balancer-labs/v2-helpers/src/models/vault/Vault';
 import { randomAddress, ZERO_ADDRESS } from '@balancer-labs/v2-helpers/src/constants';
 import { range } from 'lodash';
 import * as expectEvent from '@balancer-labs/v2-helpers/src/test/expectEvent';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 
 describe('PoolRecoveryHelper', function () {
   let vault: Vault;

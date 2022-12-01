@@ -5,7 +5,7 @@ import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-wit
 import { expect } from 'chai';
 import { defaultAbiCoder } from 'ethers/lib/utils';
 import * as expectEvent from '@balancer-labs/v2-helpers/src/test/expectEvent';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 import { ANY_ADDRESS } from '@balancer-labs/v2-helpers/src/constants';
 import { deploy } from '@balancer-labs/v2-helpers/src/contract';
 import { actionId } from '@balancer-labs/v2-helpers/src/models/misc/actions';

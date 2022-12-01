@@ -36,7 +36,7 @@ import { actionId } from '@balancer-labs/v2-helpers/src/models/misc/actions';
 
 import { range } from 'lodash';
 import { ProtocolFee } from '@balancer-labs/v2-helpers/src/models/vault/types';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 
 describe('ManagedPoolSettings', function () {
   let allTokens: TokenList;

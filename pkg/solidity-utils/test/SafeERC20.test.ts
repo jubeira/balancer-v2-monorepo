@@ -7,7 +7,7 @@ import * as expectEvent from '@balancer-labs/v2-helpers/src/test/expectEvent';
 import { deploy } from '@balancer-labs/v2-helpers/src/contract';
 import { fp } from '@balancer-labs/v2-helpers/src/numbers';
 import { MAX_UINT256 } from '@balancer-labs/v2-helpers/src/constants';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 
 describe('SafeERC20', () => {
   let erc20: Contract, usdt: Contract, falseApproveERC20: Contract, safeERC20: Contract, brokenERC20: Contract;

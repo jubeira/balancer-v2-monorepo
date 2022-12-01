@@ -1,5 +1,5 @@
 import { toNormalizedWeights } from '@balancer-labs/balancer-js';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 import { MAX_UINT256, ZERO_ADDRESS } from '@balancer-labs/v2-helpers/src/constants';
 import { deploy } from '@balancer-labs/v2-helpers/src/contract';
 import { WeightedPoolType } from '@balancer-labs/v2-helpers/src/models/pools/weighted/types';

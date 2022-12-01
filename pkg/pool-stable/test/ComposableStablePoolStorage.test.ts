@@ -3,7 +3,7 @@ import { ethers } from 'hardhat';
 import { Contract } from 'ethers';
 
 import { deploy } from '@balancer-labs/v2-helpers/src/contract';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signer-with-address';
 import { bn, FP_ONE } from '@balancer-labs/v2-helpers/src/numbers';
 import { ANY_ADDRESS, ZERO_ADDRESS } from '@balancer-labs/v2-helpers/src/constants';

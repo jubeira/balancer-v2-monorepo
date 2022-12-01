@@ -3,7 +3,7 @@ import { Contract, ContractTransaction } from 'ethers';
 import { deploy } from '@balancer-labs/v2-helpers/src/contract';
 import { expect } from 'chai';
 import { solidityKeccak256 } from 'ethers/lib/utils';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 
 enum RevertType {
   DoNotRevert,

@@ -25,7 +25,7 @@ import { Account } from '@balancer-labs/v2-helpers/src/models/types/types';
 import TypesConverter from '@balancer-labs/v2-helpers/src/models/types/TypesConverter';
 import { random } from 'lodash';
 import { defaultAbiCoder } from 'ethers/lib/utils';
-import { sharedBeforeEach } from '@balancer-labs/v2-common/sharedBeforeEach';
+import { sharedBeforeEach } from '@balancer-labs/v2-common/src/sharedBeforeEach';
 import Vault from '@balancer-labs/v2-helpers/src/models/vault/Vault';
 import { impersonateAccount, setBalance } from '@nomicfoundation/hardhat-network-helpers';
 
