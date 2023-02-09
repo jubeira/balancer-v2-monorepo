@@ -8,7 +8,7 @@ on:
     branches: '*'
 
 jobs:
-  benchmarks:
+  compile:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,14 +18,39 @@ jobs:
         run: yarn build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deployment:
+    needs: compile
+    runs-on: ubuntu-latest
+    steps:
       - name: Benchmark Deployment
         run: yarn workspace @balancer-labs/v2-benchmarks measure-deployment
+
+  single-pair-swap:
+    needs: compile
+    runs-on: ubuntu-latest
+    steps:
       - name: Benchmark Single Pair
         run: yarn workspace @balancer-labs/v2-benchmarks measure-single-pair
+
+  multihop-swap:
+    needs: compile
+    runs-on: ubuntu-latest
+    steps:
       - name: Benchmark Multihop
         run: yarn workspace @balancer-labs/v2-benchmarks measure-multihop
+
+  join-exit:
+    needs: compile
+    runs-on: ubuntu-latest
+    steps:
       - name: Benchmark Join/Exit
         run: yarn workspace @balancer-labs/v2-benchmarks measure-join-exit
+
+  relayer:
+    needs: compile
+    runs-on: ubuntu-latest
+    steps:
       - name: Benchmark Balancer Relayer - multicall
         run: yarn workspace @balancer-labs/v2-benchmarks measure-relayer
 
