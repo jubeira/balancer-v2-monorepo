@@ -56,8 +56,8 @@ describe('ChildChainGauge', () => {
     vault = await Vault.create({ admin });
     BAL = await deploy('TestBalancerToken', { args: [admin.address, 'Balancer', 'BAL'] });
 
-    VE = await deploy('v2-solidity-utils/TestToken', { args: ['Voting Escrow', 'veBAL', 18] });
-    BPT = await deploy('v2-solidity-utils/TestToken', { args: ['Balancer Pool Test token', 'BPTST', 18] });
+    VE = await deploy('v2-solidity-helpers/TestToken', { args: ['Voting Escrow', 'veBAL', 18] });
+    BPT = await deploy('v2-solidity-helpers/TestToken', { args: ['Balancer Pool Test token', 'BPTST', 18] });
 
     allRewards = await TokenList.create(8);
 
@@ -548,7 +548,9 @@ describe('ChildChainGauge', () => {
         await flakyReward.setIsBroken(true);
 
         // Add and deposit functional reward
-        functionalReward = await deploy('v2-solidity-utils/TestToken', { args: ['Test functionalReward', 'RWRD', 18] });
+        functionalReward = await deploy('v2-solidity-helpers/TestToken', {
+          args: ['Test functionalReward', 'RWRD', 18],
+        });
         await vault.authorizerAdaptorEntrypoint
           .connect(admin)
           .performAction(

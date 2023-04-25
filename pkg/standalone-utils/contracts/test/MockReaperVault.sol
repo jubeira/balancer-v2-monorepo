@@ -15,7 +15,7 @@
 pragma solidity ^0.7.0;
 
 import "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/SafeERC20.sol";
-import "@balancer-labs/v2-solidity-utils/contracts/test/TestToken.sol";
+import "@balancer-labs/v2-solidity-helpers/contracts/TestToken.sol";
 
 //we're unable to implement IYearnTokenVault because it defines the decimals function, which collides with
 //the TestToken ERC20 implementation

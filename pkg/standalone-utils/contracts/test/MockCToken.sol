@@ -18,7 +18,7 @@ import "@balancer-labs/v2-interfaces/contracts/standalone-utils/ICToken.sol";
 
 import "@balancer-labs/v2-solidity-utils/contracts/math/FixedPoint.sol";
 import "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/SafeERC20.sol";
-import "@balancer-labs/v2-solidity-utils/contracts/test/TestToken.sol";
+import "@balancer-labs/v2-solidity-helpers/contracts/TestToken.sol";
 
 contract MockCToken is TestToken, ICToken {
     using SafeERC20 for IERC20;

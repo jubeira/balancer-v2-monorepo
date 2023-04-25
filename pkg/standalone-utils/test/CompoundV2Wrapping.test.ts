@@ -38,7 +38,7 @@ describe('CompoundV2Wrapping', function () {
   sharedBeforeEach('deploy Vault', async () => {
     vault = await Vault.create({ admin });
 
-    DAI = await deploy('v2-solidity-utils/TestToken', { args: ['DAI', 'DAI', 18] });
+    DAI = await deploy('v2-solidity-helpers/TestToken', { args: ['DAI', 'DAI', 18] });
 
     cDAI = await deploy('MockCToken', {
       args: ['cDAI', 'cDAI', DAI.address, fp(2)], // exchange rate = 2

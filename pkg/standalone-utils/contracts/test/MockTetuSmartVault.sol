@@ -17,7 +17,7 @@ pragma solidity >=0.7.0 <0.9.0;
 import "@balancer-labs/v2-interfaces/contracts/standalone-utils/ITetuSmartVault.sol";
 
 import "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/SafeERC20.sol";
-import "@balancer-labs/v2-solidity-utils/contracts/test/TestToken.sol";
+import "@balancer-labs/v2-solidity-helpers/contracts/TestToken.sol";
 import "@balancer-labs/v2-solidity-utils/contracts/math/FixedPoint.sol";
 
 import "./MockTetuStrategy.sol";

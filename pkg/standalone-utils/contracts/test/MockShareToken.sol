@@ -17,7 +17,7 @@ pragma solidity ^0.7.0;
 import "@balancer-labs/v2-interfaces/contracts/standalone-utils/ISilo.sol";
 import "@balancer-labs/v2-interfaces/contracts/standalone-utils/IShareToken.sol";
 
-import "@balancer-labs/v2-solidity-utils/contracts/test/TestToken.sol";
+import "@balancer-labs/v2-solidity-helpers/contracts/TestToken.sol";
 
 contract MockShareToken is TestToken, IShareToken {
     ISilo private immutable _silo;

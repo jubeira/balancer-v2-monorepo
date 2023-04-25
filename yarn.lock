@@ -118,6 +118,7 @@ __metadata:
     "@balancer-labs/balancer-js": "workspace:*"
     "@balancer-labs/v2-helpers": "workspace:*"
     "@balancer-labs/v2-interfaces": "workspace:*"
+    "@balancer-labs/v2-solidity-helpers": "workspace:*"
     "@nomicfoundation/hardhat-network-helpers": "npm:^1.0.6"
     "@nomiclabs/hardhat-ethers": "npm:^2.2.1"
     "@nomiclabs/hardhat-etherscan": "npm:^3.1.2"
@@ -159,6 +160,7 @@ __metadata:
     "@balancer-labs/v2-helpers": "workspace:*"
     "@balancer-labs/v2-interfaces": "workspace:*"
     "@balancer-labs/v2-liquidity-mining": "workspace:*"
+    "@balancer-labs/v2-solidity-helpers": "workspace:*"
     "@nomiclabs/hardhat-ethers": "npm:^2.2.1"
     "@nomiclabs/hardhat-waffle": "npm:^2.0.3"
     "@types/chai": "npm:^4.3.3"
@@ -192,6 +194,7 @@ __metadata:
   resolution: "@balancer-labs/v2-helpers@workspace:pvt/helpers"
   dependencies:
     "@balancer-labs/balancer-js": "workspace:*"
+    "@balancer-labs/v2-solidity-helpers": "workspace:*"
     "@nomicfoundation/hardhat-network-helpers": "npm:^1.0.6"
     "@nomiclabs/hardhat-ethers": "npm:^2.2.1"
     "@types/lodash": "npm:^4.14.186"
@@ -255,6 +258,7 @@ __metadata:
     "@balancer-labs/v2-common": "workspace:*"
     "@balancer-labs/v2-helpers": "workspace:*"
     "@balancer-labs/v2-interfaces": "workspace:*"
+    "@balancer-labs/v2-solidity-helpers": "workspace:*"
     "@balancer-labs/v2-solidity-utils": "workspace:*"
     "@nomiclabs/hardhat-ethers": "npm:^2.2.1"
     "@nomiclabs/hardhat-vyper": "npm:^3.0.3"
@@ -341,6 +345,7 @@ __metadata:
     "@balancer-labs/v2-helpers": "workspace:*"
     "@balancer-labs/v2-interfaces": "workspace:*"
     "@balancer-labs/v2-pool-utils": "workspace:*"
+    "@balancer-labs/v2-solidity-helpers": "workspace:*"
     "@balancer-labs/v2-solidity-utils": "workspace:*"
     "@nomiclabs/hardhat-ethers": "npm:^2.2.1"
     "@nomiclabs/hardhat-waffle": "npm:^2.0.3"
@@ -461,6 +466,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@balancer-labs/v2-solidity-helpers@workspace:*, @balancer-labs/v2-solidity-helpers@workspace:pvt/solidity-helpers":
+  version: 0.0.0-use.local
+  resolution: "@balancer-labs/v2-solidity-helpers@workspace:pvt/solidity-helpers"
+  dependencies:
+    "@balancer-labs/balancer-js": "workspace:*"
+    "@balancer-labs/v2-common": "workspace:*"
+    "@balancer-labs/v2-helpers": "workspace:*"
+    "@balancer-labs/v2-interfaces": "workspace:*"
+    "@balancer-labs/v2-solidity-utils": "workspace:*"
+    "@nomiclabs/hardhat-ethers": "npm:^2.2.1"
+    "@nomiclabs/hardhat-waffle": "npm:^2.0.3"
+    ethereum-waffle: "npm:^3.4.4"
+    hardhat: "npm:^2.12.5"
+    hardhat-ignore-warnings: "npm:^0.2.4"
+    nodemon: "npm:^2.0.20"
+    prettier: "npm:^2.7.1"
+    prettier-plugin-solidity: "npm:v1.0.0-alpha.59"
+    solhint: "npm:^3.2.0"
+    solhint-plugin-prettier: "npm:^0.0.4"
+  languageName: unknown
+  linkType: soft
+
 "@balancer-labs/v2-solidity-utils@workspace:*, @balancer-labs/v2-solidity-utils@workspace:pkg/solidity-utils":
   version: 0.0.0-use.local
   resolution: "@balancer-labs/v2-solidity-utils@workspace:pkg/solidity-utils"
@@ -511,6 +538,7 @@ __metadata:
     "@balancer-labs/v2-helpers": "workspace:*"
     "@balancer-labs/v2-interfaces": "workspace:*"
     "@balancer-labs/v2-pool-utils": "workspace:*"
+    "@balancer-labs/v2-solidity-helpers": "workspace:*"
     "@balancer-labs/v2-solidity-utils": "workspace:*"
     "@balancer-labs/v2-vault": "workspace:*"
     "@nomiclabs/hardhat-ethers": "npm:^2.2.1"
@@ -549,6 +577,7 @@ __metadata:
     "@balancer-labs/v2-common": "workspace:*"
     "@balancer-labs/v2-helpers": "workspace:*"
     "@balancer-labs/v2-interfaces": "workspace:*"
+    "@balancer-labs/v2-solidity-helpers": "workspace:*"
     "@balancer-labs/v2-solidity-utils": "workspace:*"
     "@nomiclabs/hardhat-ethers": "npm:^2.2.1"
     "@nomiclabs/hardhat-waffle": "npm:^2.0.3"

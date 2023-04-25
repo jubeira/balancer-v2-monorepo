@@ -38,7 +38,7 @@ describe('GearboxWrapping', function () {
   sharedBeforeEach('deploy Vault', async () => {
     vault = await Vault.create({ admin });
 
-    DAI = await deploy('v2-solidity-utils/TestToken', { args: ['DAI', 'DAI', 18] });
+    DAI = await deploy('v2-solidity-helpers/TestToken', { args: ['DAI', 'DAI', 18] });
 
     gearboxVault = await deploy('MockGearboxVault', { args: [DAI.address] });
     dDAI = await deploy('MockGearboxDieselToken', { args: ['dDAI', 'dDAI', 18, gearboxVault.address] });

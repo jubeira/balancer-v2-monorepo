@@ -43,7 +43,7 @@ describe('Internal Balance', () => {
     }));
 
     // Need the Vault's WETH (address must match later)
-    const wethContract = await deployedAt('v2-standalone-utils/TestWETH', await vault.WETH());
+    const wethContract = await deployedAt('v2-solidity-helpers/TestWETH', await vault.WETH());
     // And also need a real Token, in order to call mint
     weth = new Token('Wrapped Ether', 'WETH', 18, wethContract);
     tokens = await TokenList.create(['DAI', 'MKR'], { sorted: true });

@@ -14,9 +14,9 @@
 
 pragma solidity ^0.7.0;
 
-import "../openzeppelin/ERC20Burnable.sol";
-import "../openzeppelin/ERC20Permit.sol";
-import "../openzeppelin/ERC20.sol";
+import "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20.sol";
+import "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Burnable.sol";
+import "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/ERC20Permit.sol";
 
 contract TestToken is ERC20, ERC20Burnable, ERC20Permit {
     constructor(

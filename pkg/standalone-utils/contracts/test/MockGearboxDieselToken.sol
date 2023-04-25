@@ -18,7 +18,7 @@ pragma solidity ^0.7.0;
 
 import "@balancer-labs/v2-interfaces/contracts/standalone-utils/IGearboxDieselToken.sol";
 
-import "@balancer-labs/v2-solidity-utils/contracts/test/TestToken.sol";
+import "@balancer-labs/v2-solidity-helpers/contracts/TestToken.sol";
 
 contract MockGearboxDieselToken is TestToken, IGearboxDieselToken {
     address private immutable _gearboxVaultAddress;

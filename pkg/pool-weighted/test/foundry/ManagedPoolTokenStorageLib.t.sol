@@ -18,7 +18,7 @@ pragma experimental ABIEncoderV2;
 import { Test } from "forge-std/Test.sol";
 
 import "@balancer-labs/v2-interfaces/contracts/solidity-utils/openzeppelin/IERC20.sol";
-import "@balancer-labs/v2-solidity-utils/contracts/test/TestToken.sol";
+import "@balancer-labs/v2-solidity-helpers/contracts/TestToken.sol";
 
 import "../../contracts/lib/GradualValueChange.sol";
 import "../../contracts/WeightedMath.sol";

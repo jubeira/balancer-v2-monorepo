@@ -17,7 +17,7 @@ pragma solidity ^0.7.0;
 import "@balancer-labs/v2-interfaces/contracts/pool-linear/IERC4626.sol";
 import "@balancer-labs/v2-pool-utils/contracts/test/MaliciousQueryReverter.sol";
 
-import "@balancer-labs/v2-solidity-utils/contracts/test/TestToken.sol";
+import "@balancer-labs/v2-solidity-helpers/contracts/TestToken.sol";
 import "@balancer-labs/v2-solidity-utils/contracts/math/FixedPoint.sol";
 import "@balancer-labs/v2-solidity-utils/contracts/math/Math.sol";
 

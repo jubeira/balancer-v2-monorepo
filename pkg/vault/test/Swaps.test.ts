@@ -68,7 +68,7 @@ describe('Swaps', () => {
     ({ instance: vault, authorizer } = await Vault.create({ admin }));
 
     // Contortions required to get the Vault's version of WETH to be in tokens
-    const wethContract = await deployedAt('v2-standalone-utils/TestWETH', await vault.WETH());
+    const wethContract = await deployedAt('v2-solidity-helpers/TestWETH', await vault.WETH());
     // And also need a real Token, in order to call mint
     const wethToken = new Token('Wrapped Ether', 'WETH', 18, wethContract);
     tokens.tokens.push(wethToken);

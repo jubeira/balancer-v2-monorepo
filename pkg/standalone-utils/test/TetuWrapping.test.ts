@@ -38,7 +38,7 @@ describe('TetuWrapping', function () {
   sharedBeforeEach('deploy Vault', async () => {
     vault = await Vault.create({ admin });
 
-    DAI = await deploy('v2-solidity-utils/TestToken', { args: ['DAI', 'DAI', 18] });
+    DAI = await deploy('v2-solidity-helpers/TestToken', { args: ['DAI', 'DAI', 18] });
 
     const tetuStrategy = await deploy('MockTetuStrategy');
     xDAI = await deploy('MockTetuSmartVault', { args: ['xDAI', 'xDAI', 18, DAI.address, tetuStrategy.address] });

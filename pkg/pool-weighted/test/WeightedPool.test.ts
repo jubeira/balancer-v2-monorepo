@@ -150,7 +150,7 @@ describe('WeightedPool', function () {
       });
     }
 
-    const poolArtifact = getArtifact('v2-pool-weighted/WeightedPool');
+    const poolArtifact = getArtifact('WeightedPool');
     const nonViewFunctions = poolArtifact.abi
       .filter(
         (elem) =>

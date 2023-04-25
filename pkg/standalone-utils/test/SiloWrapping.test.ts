@@ -33,7 +33,7 @@ describe('SiloWrapping', function () {
   sharedBeforeEach('deploy Vault', async () => {
     vault = await Vault.create({ admin });
     // Set up and deploy tokens
-    DAI = await deploy('v2-solidity-utils/TestToken', {
+    DAI = await deploy('v2-solidity-helpers/TestToken', {
       args: ['DAI', 'DAI', 18],
     });
 

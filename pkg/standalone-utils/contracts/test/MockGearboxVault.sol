@@ -20,7 +20,7 @@ import "@balancer-labs/v2-interfaces/contracts/standalone-utils/IGearboxDieselTo
 
 import "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/SafeERC20.sol";
 import "@balancer-labs/v2-solidity-utils/contracts/math/FixedPoint.sol";
-import "@balancer-labs/v2-solidity-utils/contracts/test/TestToken.sol";
+import "@balancer-labs/v2-solidity-helpers/contracts/TestToken.sol";
 
 import "./MockGearboxDieselToken.sol";
 

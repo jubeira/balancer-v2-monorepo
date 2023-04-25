@@ -34,6 +34,7 @@
     "@balancer-labs/v2-helpers": "workspace:*",
     "@balancer-labs/v2-interfaces": "workspace:*",
     "@balancer-labs/v2-pool-utils": "workspace:*",
+    "@balancer-labs/v2-solidity-helpers": "workspace:*",
     "@balancer-labs/v2-solidity-utils": "workspace:*",
     "@balancer-labs/v2-vault": "workspace:*",
     "@nomiclabs/hardhat-ethers": "^2.2.1",

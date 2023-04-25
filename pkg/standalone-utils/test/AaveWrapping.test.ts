@@ -37,8 +37,8 @@ describe('AaveWrapping', function () {
   sharedBeforeEach('deploy and tokens', async () => {
     vault = await Vault.create({ admin });
 
-    token = await deploy('v2-solidity-utils/TestToken', { args: ['Test token', 'TST', 18] });
-    aToken = await deploy('v2-solidity-utils/TestToken', { args: ['Test aToken', 'aTST', 18] });
+    token = await deploy('v2-solidity-helpers/TestToken', { args: ['Test token', 'TST', 18] });
+    aToken = await deploy('v2-solidity-helpers/TestToken', { args: ['Test aToken', 'aTST', 18] });
     staticToken = await deploy('MockStaticATokenLM', {
       args: ['Static A Token', 'staTST', token.address, aToken.address],
     });

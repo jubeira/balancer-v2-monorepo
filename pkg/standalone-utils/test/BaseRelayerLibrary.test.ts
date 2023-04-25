@@ -35,7 +35,7 @@ describe('BaseRelayerLibrary', function () {
     // Deploy Relayer
     relayerLibrary = await deploy('MockBaseRelayerLibrary', { args: [vault.address] });
     relayer = await deployedAt('BalancerRelayer', await relayerLibrary.getEntrypoint());
-    token = await deploy('TestWETH'); // Any ERC-20 will do.
+    token = await deploy('v2-solidity-helpers/TestWETH'); // Any ERC-20 will do.
   });
 
   describe('relayer getters', () => {

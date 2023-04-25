@@ -18,8 +18,8 @@ import "@balancer-labs/v2-interfaces/contracts/solidity-utils/openzeppelin/IERC2
 import "@balancer-labs/v2-interfaces/contracts/vault/IFlashLoanRecipient.sol";
 import "@balancer-labs/v2-interfaces/contracts/vault/IVault.sol";
 
+import "@balancer-labs/v2-solidity-helpers/contracts/TestToken.sol";
 import "@balancer-labs/v2-solidity-utils/contracts/openzeppelin/SafeERC20.sol";
-import "@balancer-labs/v2-solidity-utils/contracts/test/TestToken.sol";
 import "@balancer-labs/v2-solidity-utils/contracts/math/Math.sol";
 
 contract MockFlashLoanRecipient is IFlashLoanRecipient {

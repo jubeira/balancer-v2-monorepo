@@ -41,7 +41,7 @@ describe('EulerWrapping', function () {
 
     mockEulerProtocol = await deploy('MockEulerProtocol');
 
-    DAI = await deploy('v2-solidity-utils/TestToken', { args: ['DAI', 'DAI', 18] });
+    DAI = await deploy('v2-solidity-helpers/TestToken', { args: ['DAI', 'DAI', 18] });
 
     const daiAddress = DAI.address;
     const eulerProtocolAddress = mockEulerProtocol.address;
