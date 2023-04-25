@@ -17,3 +17,6 @@ runs:
       run: yarn --immutable
       shell: bash
       if: steps.cache.outputs.cache-hit != 'true'
+    - name: Solc
+      run: npm install -g solc@0.7.1
+      shell: bash
